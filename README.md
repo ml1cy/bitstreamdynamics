@@ -35,3 +35,7 @@ npx wrangler pages deploy .
 
 See [CLAUDE.md](./CLAUDE.md) for notes aimed at AI coding assistants working
 in this repo.
+
+## License
+
+No license has been chosen yet.
