@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitstream Dynamics</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0f172a;
+      --fg: #f1f5f9;
+      --accent: #38bdf8;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.02em;
+    }
+    p.tagline {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 2rem;
+    }
+    .card {
+      max-width: 600px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+    }
+    .card p {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    footer {
+      margin-top: 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bitstream Dynamics</h1>
+  <p class="tagline">Kalamazoo KRESA CTE &mdash; Computer Networking</p>
+  <div class="card">
+    <p>
+      This site is the home base for our computer networking class. More
+      content about the class, projects, and what we're building is coming
+      soon.
+    </p>
+  </div>
+  <footer>&copy; 2026 Bitstream Dynamics</footer>
+</body>
+</html>
