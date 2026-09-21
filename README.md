@@ -9,26 +9,34 @@ will be added over time.
 
 ## Status
 
-Early / placeholder. Right now it's a single static `index.html` page, just
-enough to get something deployed.
+Early / placeholder. Built with React + Vite. More content will be added
+over time.
+
+## Development
+
+```sh
+npm install
+npm run dev
+```
 
 ## Deploying (Cloudflare Pages)
 
-This is a plain static site, no build step required.
+This site is built with Vite and requires a build step.
 
 1. Push this repo to GitHub.
 2. In the Cloudflare dashboard, create a new Pages project and connect the
    repo.
 3. Build settings:
-   - **Build command:** (leave blank)
-   - **Build output directory:** `/`
+   - **Build command:** `npm run build`
+   - **Build output directory:** `dist`
 4. Deploy.
 
 Alternatively, deploy directly from the CLI with
 [Wrangler](https://developers.cloudflare.com/pages/get-started/direct-upload/):
 
 ```sh
-npx wrangler pages deploy .
+npm run build
+npx wrangler pages deploy dist
 ```
 
 ## Contributing
