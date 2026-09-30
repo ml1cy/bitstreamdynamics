@@ -11,14 +11,14 @@ class info, not act as a storefront.
 
 ## Current state
 
-Barebones static site: a single `index.html`, no build tooling, no
-framework. Deployed as a static site (Cloudflare Pages).
+React + Vite app (`src/App.jsx`, `src/main.jsx`). Built output is deployed
+as a static site (Cloudflare Pages) via `npm run build`.
 
 ## Conventions
 
-- Keep it plain HTML/CSS/JS unless there's a real reason to add a framework
-  or build step — this is a class site, not a product.
-- No build process currently exists. If one gets added later, update the
-  README's deploy instructions to match.
-- Prefer editing `index.html` directly over introducing new tooling for
-  small content changes.
+- Content lives in `src/App.jsx` and related components — edit there rather
+  than the built `index.html`.
+- Run `npm run dev` for local development, `npm run build` before deploying.
+- Keep the framework usage lightweight — this is a class site, not a
+  product, so avoid adding heavy dependencies or infra beyond what's needed
+  for basic content and layout.
