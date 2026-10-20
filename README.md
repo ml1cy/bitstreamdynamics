@@ -19,24 +19,20 @@ npm install
 npm run dev
 ```
 
-## Deploying (Cloudflare Pages)
+## Deploying (Cloudflare Workers)
 
-This site is built with Vite and requires a build step.
+This site is built with Vite and the
+[Cloudflare Vite plugin](https://developers.cloudflare.com/workers/vite-plugin/),
+and deploys as a Worker with static assets (configured in `wrangler.jsonc`).
 
-1. Push this repo to GitHub.
-2. In the Cloudflare dashboard, create a new Pages project and connect the
-   repo.
-3. Build settings:
-   - **Build command:** `npm run build`
-   - **Build output directory:** `dist`
-4. Deploy.
+Via Cloudflare's dashboard (Workers Builds), connect the repo and set:
+- **Build command:** `npm run build`
+- **Deploy command:** `npx wrangler deploy`
 
-Alternatively, deploy directly from the CLI with
-[Wrangler](https://developers.cloudflare.com/pages/get-started/direct-upload/):
+Alternatively, deploy directly from the CLI:
 
 ```sh
-npm run build
-npx wrangler pages deploy dist
+npm run deploy
 ```
 
 ## Contributing
