@@ -1,108 +1,71 @@
 import { Link } from "react-router-dom";
-import { OsiAccordion } from "../components/OsiAccordion.jsx";
-import { PatchPanelArt, TwistedPairArt } from "../components/Art.jsx";
-import { Reveal } from "../components/Reveal.jsx";
-
-const SKILLS = [
-  { name: "TCP/IP & OSI", tag: "fundamentals" },
-  { name: "Structured Cabling", tag: "hardware" },
-  { name: "Routing & Switching", tag: "basics" },
-  { name: "Network Security", tag: "fundamentals" },
-  { name: "Packet Tracer", tag: "labs" },
-  { name: "CompTIA Network+", tag: "certification" },
-];
+import { Icon } from "../components/Icon.jsx";
+import { HexGrid, PulseDivider } from "../components/Motifs.jsx";
+import { StackDiagram } from "../components/StackDiagram.jsx";
+import { StackSpine } from "../components/StackSpine.jsx";
 
 export default function Home() {
   return (
     <>
       <header className="hero">
-        <h1 className="hero-head">
-          <span className="hero-line hero-line-1">Built on</span>
-          <span className="hero-line hero-line-2">bitstreams</span>
-        </h1>
-
-        <p className="hero-sub">
-          A fictional network-operations company run by the Computer
-          Networking class at Kalamazoo KRESA CTE. Real curriculum, played
-          as a company.
-        </p>
-
-        <PatchPanelArt className="hero-art" />
-
-        <p className="hero-fact">Computer Networking &middot; KRESA CTE</p>
+        <HexGrid className="hex-grid" />
+        <div className="container hero__inner">
+          <div className="hero__copy">
+            <h1 className="display-xl page-enter">From the browser to the cable</h1>
+            <p className="body-lg hero__lead page-enter page-enter-2">
+              bitstream is the practice network-operations company of the
+              Computer Networking class at Kalamazoo KRESA CTE. The company is
+              pretend; the curriculum is real, all seven layers of it.
+            </p>
+            <div className="bs-row hero__actions page-enter page-enter-3">
+              <a className="bs-btn bs-btn--secondary" href="#stack">
+                See the seven layers
+              </a>
+              <Link className="bs-btn bs-btn--ghost" to="/directory">
+                Meet the teams
+                <Icon name="arrow-right" />
+              </Link>
+            </div>
+          </div>
+          <StackDiagram />
+        </div>
       </header>
 
-      <section id="about" className="panel">
-        <div className="panel-copy">
-          <Reveal as="h2" className="panel-head">
-            No real product. Real network.
-          </Reveal>
-          <div className="panel-blocks">
-            <Reveal as="div" className="panel-block" delay={80}>
-              <h3>The premise</h3>
-              <p>
-                Bitstream Dynamics isn&rsquo;t a business. It&rsquo;s the
-                name our Computer Networking class put on this site.
-                Kalamazoo KRESA CTE runs the class; we run the site like the
-                network-ops company the name sounds like.
-              </p>
-            </Reveal>
-            <Reveal as="div" className="panel-block" delay={150}>
-              <h3>What&rsquo;s real</h3>
-              <p>
-                The curriculum below is what the class actually covers:
-                cabling, routing and switching, security fundamentals,
-                Packet Tracer labs, and a path toward CompTIA Network+.
-              </p>
-            </Reveal>
-            <Reveal as={Link} className="btn" to="/projects" delay={220}>
-              See the projects
-            </Reveal>
+      <section id="stack" className="section container">
+        <div className="section__intro">
+          <h2 className="display">Seven layers, top to bottom</h2>
+          <p className="body-lg">
+            A request leaves your browser at layer 7 and reaches the cable at
+            layer 1. Here&rsquo;s what each layer does, and where it shows up
+            in class.
+          </p>
+        </div>
+        <StackSpine />
+      </section>
+
+      <section className="section container closing">
+        <PulseDivider />
+        <div className="closing__inner">
+          <h2 className="display">Layer 1 is the part you can hold</h2>
+          <div className="closing__text">
+            <p className="body-lg">
+              Much of the stack gets built in Cisco Packet Tracer, a network
+              simulator. Layer 1 is the cable, the jacks and the patch panel,
+              and the class does that part by hand. CompTIA Network+ is the
+              exam that covers all seven.
+            </p>
+            <div className="bs-row">
+              <Link className="bs-btn bs-btn--secondary" to="/projects">
+                See the projects
+                <Icon name="arrow-right" />
+              </Link>
+              <Link className="bs-btn bs-btn--ghost" to="/directory">
+                Meet the teams
+                <Icon name="arrow-right" />
+              </Link>
+            </div>
           </div>
         </div>
-        <Reveal as={TwistedPairArt} className="panel-art" delay={120} />
-      </section>
-
-      <section id="curriculum" className="strip">
-        <div className="strip-intro">
-          <Reveal as="h2" delay={0}>
-            The OSI stack, as we teach it
-          </Reveal>
-          <Reveal as="p" delay={80}>
-            Seven layers move a bit from a cable to a web page. Pick a layer
-            to see what it does and where it shows up in class.
-          </Reveal>
-        </div>
-        <Reveal delay={160}>
-          <OsiAccordion />
-        </Reveal>
-      </section>
-
-      <section id="skills" className="poster">
-        {SKILLS.map((skill, i) => (
-          <Reveal as="div" className="poster-item" key={skill.name} delay={i * 60}>
-            <span className="poster-name">{skill.name}</span>
-            <span className="poster-tag">{skill.tag}</span>
-          </Reveal>
-        ))}
-      </section>
-
-      <section className="cta-band">
-        <div>
-          <Reveal as="h2">See who&rsquo;s on the network</Reveal>
-          <Reveal as="p" delay={80}>
-            The teams, the projects, and how to reach the class.
-          </Reveal>
-          <Reveal as="div" className="cta-band-links" delay={160}>
-            <Link className="btn" to="/directory">
-              Open the directory
-            </Link>
-            <Link className="btn btn-ghost" to="/contact">
-              Contact
-            </Link>
-          </Reveal>
-        </div>
-        <Reveal as={PatchPanelArt} className="cta-band-art" delay={120} />
       </section>
     </>
   );

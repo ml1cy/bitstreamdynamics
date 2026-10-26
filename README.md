@@ -1,16 +1,18 @@
-# Bitstream Dynamics
+# bitstream
 
-Website for the Computer Networking class at Kalamazoo KRESA CTE. "Bitstream
-Dynamics" is our class's fictional business name, used as a class project —
-this is not an actual business.
+Website for the Computer Networking class at Kalamazoo KRESA CTE. "bitstream"
+is our class's fictional business name, used as a class project. This is not
+an actual business.
 
-This site currently just hosts general info about the class. More content
-will be added over time.
+The site holds general info about the class: the curriculum, the class's
+teams, its projects and how to reach it.
 
 ## Status
 
-Early / placeholder. Built with React + Vite. More content will be added
-over time.
+Built with React + Vite and styled with the bitstream design system
+(`public/tokens.css`, `public/bitstream.css`, logos in `public/logos/`). The
+full system, with its brand book and component reference, is installed as a
+Claude Code skill in `.claude/skills/bitstream-design/`.
 
 ## Development
 
