@@ -12,6 +12,17 @@ const FOOTER_LINKS = [...LINKS, { to: "/contact", label: "Contact" }];
 
 const LOGO = "/logos/bitstream-logo-horizontal-transparent-dark-bg.svg";
 
+// The brand's logo file says "bitstream"; "dynamics" is set beside it in the wordmark's
+// typeface rather than redrawing the logo.
+function SiteLogo({ imgClassName }) {
+  return (
+    <span className="site-logo" role="img" aria-label="bitstream dynamics">
+      <img className={imgClassName} src={LOGO} alt="" width="136" height="44" />
+      <span className="site-logo__name">dynamics</span>
+    </span>
+  );
+}
+
 export function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname, hash } = useLocation();
@@ -38,8 +49,8 @@ export function Layout() {
 
       <header className="site-header">
         <nav className="bs-nav" aria-label="Main">
-          <Link to="/" className="site-logo">
-            <img className="bs-nav__logo" src={LOGO} alt="bitstream" width="136" height="44" />
+          <Link to="/" className="site-home">
+            <SiteLogo imgClassName="bs-nav__logo" />
           </Link>
           <div className="bs-nav__links">
             {LINKS.map((link) => (
@@ -49,7 +60,8 @@ export function Layout() {
             ))}
           </div>
           <Link className="bs-btn bs-btn--primary bs-btn--sm" to="/contact">
-            Contact the class
+            <span className="cta-long">Contact the class</span>
+            <span className="cta-short">Contact</span>
           </Link>
           <button
             type="button"
@@ -78,7 +90,7 @@ export function Layout() {
       <footer className="site-footer">
         <div className="container site-footer__inner">
           <div className="site-footer__brand">
-            <img src={LOGO} alt="bitstream" width="136" height="44" />
+            <SiteLogo />
             <p className="small">
               The practice network-operations company of the Computer
               Networking class at Kalamazoo KRESA CTE.
@@ -93,8 +105,8 @@ export function Layout() {
           </nav>
         </div>
         <p className="container small site-footer__note">
-          A class project, not a business: bitstream doesn&rsquo;t sell internet
-          or IT service.
+          A class project, not a business: bitstream dynamics doesn&rsquo;t sell
+          internet or IT service.
         </p>
       </footer>
     </>

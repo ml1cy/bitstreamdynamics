@@ -26,7 +26,7 @@ export default function Contact() {
       <section className="section section--tight container contact">
         <div className="whois">
           <p className="data whois__cmd">
-            <span aria-hidden="true">$ </span>whois bitstream
+            <span aria-hidden="true">$ </span>whois bitstreamdynamics
           </p>
           <dl className="whois__record data">
             {RECORD.map(([key, value]) => (
