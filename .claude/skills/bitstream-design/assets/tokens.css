@@ -1,0 +1,85 @@
+/* bitstream design tokens. Dark is default; set data-theme="light" on <html> for light. */
+:root, [data-theme="dark"] {
+  --brand-navy: #000138;
+  --brand-cyan: #5CE1E6;
+  --surface-000: #000138;
+  --surface-100: #06104F;
+  --surface-200: #0E1B66;
+  --signal-soft: #0A2D63;
+  --line: #1F2D7A;
+  --line-strong: #6E7BC0;
+  --ink: #FFFFFF;
+  --ink-muted: #B4BCE4;
+  --ink-subtle: #8C96CC;
+  --signal: #5CE1E6;
+  --signal-hover: #8EEBEE;
+  --on-signal: #000138;
+  --signal-ink: #5CE1E6;
+  --focus-ring: #5CE1E6;
+  --status-up: #3DDC97;
+  --status-degraded: #FFC24B;
+  --status-down: #FF7A8A;
+  --status-maint: #AEB8FF;
+  --on-status: #000138;
+  --danger-fill: var(--status-down);
+  --elevation-1: 0 0 0 1px #1F2D7A;
+  --elevation-2: 0 0 0 1px #2E3E96, 0 12px 32px rgba(0, 0, 20, 0.6);
+}
+[data-theme="light"] {
+  --brand-navy: #000138;
+  --brand-cyan: #5CE1E6;
+  --surface-000: #F4F7FC;
+  --surface-100: #FFFFFF;
+  --surface-200: #E8EEF8;
+  --signal-soft: #DDF6F7;
+  --line: #D3DBEA;
+  --line-strong: #7681A6;
+  --ink: #000138;
+  --ink-muted: #3D4573;
+  --ink-subtle: #5A628A;
+  --signal: #1BB8BE;
+  --signal-hover: #169EA3;
+  --on-signal: #000138;
+  --signal-ink: #0A6E73;
+  --focus-ring: #0A6E73;
+  --status-up: #0E7146;
+  --status-degraded: #8A5300;
+  --status-down: #B3213B;
+  --status-maint: #4150C4;
+  --on-status: #FFFFFF;
+  --danger-fill: var(--status-down);
+  --elevation-1: 0 1px 2px rgba(0, 1, 56, 0.06), 0 4px 16px rgba(0, 1, 56, 0.06);
+  --elevation-2: 0 2px 4px rgba(0, 1, 56, 0.08), 0 16px 40px rgba(0, 1, 56, 0.12);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --stroke-pulse: 2px;
+  --stroke-icon: 2px;
+  --font-display: Poppins, "Avenir Next", system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+.display-xl { font-family: var(--font-display); font-size: 56px; line-height: 60px; font-weight: 500; letter-spacing: -0.02em; }
+.display { font-family: var(--font-display); font-size: 40px; line-height: 46px; font-weight: 500; letter-spacing: -0.015em; }
+.h1 { font-family: var(--font-display); font-size: 32px; line-height: 40px; font-weight: 500; letter-spacing: -0.01em; }
+.h2 { font-family: var(--font-display); font-size: 24px; line-height: 32px; font-weight: 500; }
+.h3 { font-family: var(--font-display); font-size: 18px; line-height: 26px; font-weight: 500; }
+.body-lg { font-family: var(--font-sans); font-size: 18px; line-height: 28px; font-weight: 400; }
+.body { font-family: var(--font-sans); font-size: 16px; line-height: 24px; font-weight: 400; }
+.label { font-family: var(--font-sans); font-size: 14px; line-height: 20px; font-weight: 500; }
+.small { font-family: var(--font-sans); font-size: 14px; line-height: 20px; font-weight: 400; }
+.overline { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; }
+.metric { font-family: var(--font-mono); font-size: 32px; line-height: 36px; font-weight: 500; }
+.data { font-family: var(--font-mono); font-size: 14px; line-height: 20px; font-weight: 400; }

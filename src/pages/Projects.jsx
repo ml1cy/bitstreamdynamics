@@ -1,63 +1,53 @@
-import { Reveal } from "../components/Reveal.jsx";
+import { PROJECTS, formatLayers, slug } from "../data/course.js";
 
-const PROJECTS = [
-  {
-    name: "Structured cabling build",
-    unit: "Structured cabling & hardware",
-    detail:
-      "Terminate Cat6 runs to a patch panel and punch down jacks to spec, then certify every run.",
-  },
-  {
-    name: "Packet Tracer network build",
-    unit: "Routing & switching",
-    detail:
-      "Design and simulate a multi-router, multi-switch topology, then troubleshoot it until traffic flows end to end.",
-  },
-  {
-    name: "Addressing & subnetting plan",
-    unit: "TCP/IP & OSI",
-    detail:
-      "Plan an IPv4 addressing scheme for a multi-department network and justify every subnet boundary.",
-  },
-  {
-    name: "Security hardening lab",
-    unit: "Network security",
-    detail:
-      "Configure basic ACLs and access policies on a simulated network, then try to break someone else's.",
-  },
-  {
-    name: "Network+ exam prep",
-    unit: "CompTIA Network+",
-    detail:
-      "Practice objective-by-objective toward the industry certification the class works up to.",
-  },
-];
+const STACK = [1, 2, 3, 4, 5, 6, 7];
+
+// Which layers a project works in, drawn like the brand's signal-bar strip.
+function LayerStrip({ layers }) {
+  const label = formatLayers(layers);
+  return (
+    <div className="layer-strip" role="img" aria-label={`OSI layers ${label}`}>
+      <p className="data layer-strip__summary" aria-hidden="true">
+        {label}
+      </p>
+      <div className="layer-strip__cells" aria-hidden="true">
+        {STACK.map((n) => (
+          <span key={n} className={layers.includes(n) ? "is-on" : undefined} />
+        ))}
+      </div>
+      <div className="layer-strip__labels data" aria-hidden="true">
+        {STACK.map((n) => (
+          <span key={n}>L{n}</span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Projects() {
   return (
     <>
-      <header className="page-head">
-        <h1 className="page-head-enter">Projects</h1>
-        <p className="page-head-enter page-head-enter-2">
-          What the curriculum turns into on the bench. Each project maps to a
-          unit in the OSI stack on the home page.
+      <header className="page-head container">
+        <h1 className="display-xl page-enter">Projects</h1>
+        <p className="body-lg page-enter page-enter-2">
+          What the curriculum turns into on the bench, and which of the seven
+          layers each one works in.
         </p>
       </header>
 
-      <section className="projects">
-        {PROJECTS.map((p, i) => (
-          <article className="project-row" key={p.name}>
-            <Reveal as="span" className="project-unit" delay={i * 90}>
-              {p.unit}
-            </Reveal>
-            <Reveal as="h2" delay={i * 90 + 60}>
-              {p.name}
-            </Reveal>
-            <Reveal as="p" delay={i * 90 + 120}>
-              {p.detail}
-            </Reveal>
-          </article>
-        ))}
+      <section className="section section--tight container">
+        <ol className="project-list">
+          {PROJECTS.map((p) => (
+            <li key={p.name} id={slug(p.name)} className="project-row">
+              <div className="project-row__main">
+                <h2 className="h2">{p.name}</h2>
+                <p>{p.detail}</p>
+                <p className="small project-row__unit">Unit: {p.unit}</p>
+              </div>
+              <LayerStrip layers={p.layers} />
+            </li>
+          ))}
+        </ol>
       </section>
     </>
   );

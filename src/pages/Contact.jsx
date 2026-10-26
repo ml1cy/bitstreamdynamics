@@ -1,42 +1,59 @@
-import { Reveal } from "../components/Reveal.jsx";
-import { TwistedPairArt } from "../components/Art.jsx";
+import { Icon } from "../components/Icon.jsx";
+
+const RECORD = [
+  ["Organization", "Kalamazoo RESA, Career and Technical Education"],
+  ["Program", "Computer Networking"],
+  ["Location", "Kalamazoo, Michigan"],
+  [
+    "Web",
+    <a key="web" href="https://www.kresa.org" target="_blank" rel="noreferrer">
+      kresa.org
+    </a>,
+  ],
+  ["Status", "class project, not a business"],
+];
 
 export default function Contact() {
   return (
     <>
-      <header className="page-head">
-        <h1 className="page-head-enter">Contact</h1>
-        <p className="page-head-enter page-head-enter-2">
-          No sales line &mdash; just a class that keeps a network running.
+      <header className="page-head container">
+        <h1 className="display-xl page-enter">Contact</h1>
+        <p className="body-lg page-enter page-enter-2">
+          No sales line, just a class that keeps a network running.
         </p>
       </header>
 
-      <Reveal as={TwistedPairArt} className="contact-art" delay={160} />
+      <section className="section section--tight container contact">
+        <div className="whois">
+          <p className="data whois__cmd">
+            <span aria-hidden="true">$ </span>whois bitstream
+          </p>
+          <dl className="whois__record data">
+            {RECORD.map(([key, value]) => (
+              <div key={key}>
+                <dt>{key}:</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
 
-      <section className="rows">
-        <Reveal as="a" className="rows-row rows-link" href="https://www.kresa.org" target="_blank" rel="noreferrer">
-          Kalamazoo RESA, Career &amp; Technical Education
-        </Reveal>
-        <Reveal as="div" className="rows-row" delay={70}>
-          Kalamazoo, Michigan
-        </Reveal>
-        <Reveal as="div" className="rows-row" delay={140}>
-          Questions about the class? Start at kresa.org and ask for Computer
-          Networking.
-        </Reveal>
-        <Reveal
-          as="a"
-          className="rows-row rows-greeting"
-          href="https://www.kresa.org"
-          target="_blank"
-          rel="noreferrer"
-          delay={210}
-        >
-          Say hello
-          <span className="rows-arrow" aria-hidden="true">
-            &rarr;
-          </span>
-        </Reveal>
+        <div className="contact__ask">
+          <h2 className="h2">Ask about the class</h2>
+          <p>
+            Questions about enrolling or what the course covers go to Kalamazoo
+            RESA. Start at kresa.org and ask for Computer Networking.
+          </p>
+          <a
+            className="bs-btn bs-btn--secondary"
+            href="https://www.kresa.org"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Visit kresa.org
+            <Icon name="external-link" />
+          </a>
+        </div>
       </section>
     </>
   );

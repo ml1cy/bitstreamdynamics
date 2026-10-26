@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240"><rect width="240" height="240" fill="#000138"/><g>
+<defs><clipPath id="clipo"><polygon points="189.91,120.00 154.95,180.54 85.05,180.54 50.09,120.00 85.05,59.46 154.95,59.46"/></clipPath></defs>
+<polygon points="208.00,120.00 164.00,196.21 76.00,196.21 32.00,120.00 76.00,43.79 164.00,43.79" fill="#5CE1E6" stroke="#5CE1E6" stroke-width="4.93" stroke-linejoin="round"/>
+<polygon points="189.91,120.00 154.95,180.54 85.05,180.54 50.09,120.00 85.05,59.46 154.95,59.46" fill="#FFFFFF"/>
+<polyline clip-path="url(#clipo)" points="68.19,153.72 87.10,145.50 88.75,127.40 106.02,137.27 110.13,132.34 115.07,144.67 101.91,78.06 155.36,152.07 147.14,91.21 164.41,102.73 180.04,94.50" fill="none" stroke="#5CE1E6" stroke-width="10.69" stroke-linecap="round" stroke-linejoin="round"/>
+</g></svg>
