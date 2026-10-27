@@ -1,8 +1,8 @@
-# bitstream
+# bitstream dynamics
 
-Website for the Computer Networking class at Kalamazoo KRESA CTE. "bitstream"
-is our class's fictional business name, used as a class project. This is not
-an actual business.
+Website for the Computer Networking class at Kalamazoo KRESA CTE. "bitstream
+dynamics" is our class's fictional business name, used as a class project. This
+is not an actual business.
 
 The site holds general info about the class: the curriculum, the class's
 teams, its projects and how to reach it.

@@ -5,9 +5,10 @@ Context for AI agents (Claude or otherwise) working in this repo.
 ## What this is
 
 Website for a high school Computer Networking class at Kalamazoo KRESA CTE.
-"bitstream" is the class's fictional business name for the project — there is
-no real business behind it. The site is meant to hold general class info, not
-act as a storefront.
+"bitstream dynamics" is the class's fictional business name for the project —
+there is no real business behind it. The site is meant to hold general class
+info, not act as a storefront. Write the name lowercase, per the design
+system's voice rules.
 
 ## Current state
 
@@ -45,6 +46,10 @@ colors or redraw the logo.
   using tokens only.
 - Logos used by the site are copied into `public/logos/`; the full set is in
   the skill's `assets/logos/`.
+- The logo files say "bitstream" only. `SiteLogo` in `Layout.jsx` sets
+  "dynamics" beside the unmodified logo in the wordmark's typeface; use it
+  wherever the logo appears instead of editing the SVGs. The OG image still
+  reads "bitstream" until a full lockup is made.
 
 Layouts are built from the class's own material, not stock page patterns:
 the OSI stack as the home page's spine (`StackSpine`, `StackDiagram`), the

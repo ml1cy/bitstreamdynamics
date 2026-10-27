@@ -19,8 +19,8 @@ export default function Directory() {
       <header className="page-head container">
         <h1 className="display-xl page-enter">Directory</h1>
         <p className="body-lg page-enter page-enter-2">
-          bitstream, wired up like the network-ops company it&rsquo;s named
-          after. These are the class&rsquo;s real teams; the instructor is
+          bitstream dynamics, wired up like the network-ops company it&rsquo;s
+          named after. These are the class&rsquo;s real teams; the instructor is
           still filling in the names.
         </p>
       </header>

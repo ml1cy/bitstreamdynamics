@@ -142,9 +142,27 @@ a {
   border-bottom: 0;
 }
 
-.site-logo {
+.site-home {
   display: flex;
   flex: none;
+  text-decoration: none;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Sits on the logo wordmark's baseline at its size and weight, continuing "stream". */
+.site-logo__name {
+  margin-left: -6px;
+  font: 400 16px/1 var(--font-display);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.cta-short {
+  display: none;
 }
 
 .site-menu-btn {
@@ -198,8 +216,16 @@ a {
     padding: 0 var(--space-4);
   }
 
-  .site-logo {
+  .site-home {
     margin-right: auto;
+  }
+
+  .cta-long {
+    display: none;
+  }
+
+  .cta-short {
+    display: inline;
   }
 
   .bs-nav__links {
